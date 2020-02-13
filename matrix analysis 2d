@@ -1,3 +1,5 @@
+#This file produces low rank approximations of the image of various ranks
+
 using Images, FileIO, LinearAlgebra
 
 savepic(filename,img) = save(filename, convert(Array{Gray{N0f8},2},clamp01.(img)));
