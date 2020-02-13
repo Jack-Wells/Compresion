@@ -1,3 +1,5 @@
+#This code calculates the singular values and their size and displays them as a plot
+
 using Plots, Images, FileIO, LinearAlgebra
 
 plot(xlims=(0,200),ylims=(0,100), linewidth=1.5, title="SVD values against possition in matrix")
