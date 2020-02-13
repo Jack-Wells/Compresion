@@ -1,0 +1,18 @@
+using Images, FileIO, LinearAlgebra
+
+savepic(filename,img) = save(filename, convert(Array{Gray{N0f8},2},clamp01.(img)));
+
+for name in ("lines","lines_tilted","einstein")
+    img = load("$(name).jpg")
+	a=size(img)
+	for r = (5,50,100,500)
+		img_r=zeros(a)
+		B = zeros(size(img))
+        U,E,V=LinearAlgebra.svd(img)
+		for i in 1:r
+			B = U[:,i] * E[i] * V[:,i]'
+			img_r += B
+		end
+        savepic("$(name)_r$(r).jpg", img_r)
+    end
+end 

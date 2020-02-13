@@ -1,0 +1,20 @@
+using FileIO,Images
+
+img1=load("einstein_r100.jpg");
+(m,n)=size(img1);
+println("file size in bytes is =")
+(m*100)+(100*100)+(100*n)
+println("for einstein_r100.")
+
+
+img2=load("lines_r5.jpg");
+(m,n)=size(img2);
+println("file size in bytes is =")
+A=(m*5)+(5*5)+(5*n)
+println("for lines_r5.")
+
+img3=load("lines_tilted_r500.jpg");
+(m,n)=size(img3);
+println("file size in bytes is =")
+(m*500)+(500*500)+(500*n)
+println("for lines_tilted_500.")

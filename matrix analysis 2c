@@ -1,0 +1,14 @@
+using Plots, Images, FileIO, LinearAlgebra
+
+plot(xlims=(0,200),ylims=(0,100), linewidth=1.5, title="SVD values against possition in matrix")
+xlabel!("Position on diagonal of SVD value")
+ylabel!("SVD value")
+
+for name in ("lines","lines_tilted","einstein")
+img = load("$(name).jpg")
+s = LinearAlgebra.svdvals(img)
+p=plot!(s, label=name)
+display(p)
+end
+
+savefig("svdvals.png")
