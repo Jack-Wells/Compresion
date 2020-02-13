@@ -1,3 +1,4 @@
+#This code calcultes the size of the new compressed image for comparison to other forms of compresion like JPEG.
 using FileIO,Images
 
 img1=load("einstein_r100.jpg");
